@@ -1,11 +1,11 @@
 const { errorStatusesList, resMessagesList } = require('../utils/constants');
 
 function catchErrors(err, req, res, next) {
-  const { stausCode = errorStatusesList.internalServerError, message } = err;
+  const { statusCode = errorStatusesList.internalServerError, message } = err;
 
-  res.status(stausCode);
+  res.status(statusCode);
   res.send({
-    message: stausCode === 500
+    message: statusCode === 500
       ? resMessagesList.internalServerError
       : message,
   });
