@@ -15,6 +15,7 @@ const resMessagesList = {
   forbidden: 'Вы не можете удалять чужие фильмы',
   conflict: 'Пользователь с указанной почтой уже существует',
   deletionSuccess: 'Фильм удалён',
+  incorrectCredentials: 'Неправильные почта или пароль',
 };
 
 module.exports = {
