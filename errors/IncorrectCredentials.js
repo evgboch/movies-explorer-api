@@ -3,7 +3,8 @@ const { resMessagesList } = require('../utils/constants');
 
 class IncorrectCredentialsError extends UnauthorizedError {
   constructor() {
-    super(resMessagesList.incorrectCredentials);
+    super();
+    this.message = resMessagesList.incorrectCredentials;
   }
 }
 
