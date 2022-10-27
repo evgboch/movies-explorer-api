@@ -50,7 +50,10 @@ function getUserInfo(req, res, next) {
       throw new NotFoundError();
     })
     .then((user) => {
-      res.send(user);
+      res.send({
+        email: user.email,
+        name: user.name,
+      });
     })
     .catch((err) => {
       if ((err.name === 'ValidationError') || (err.name === 'CastError')) {
@@ -76,7 +79,10 @@ function updateUserInfo(req, res, next) {
       throw new NotFoundError();
     })
     .then((user) => {
-      res.send(user);
+      res.send({
+        email: user.email,
+        name: user.name,
+      });
     })
     .catch((err) => {
       if ((err.name === 'ValidationError') || (err.name === 'CastError')) {
