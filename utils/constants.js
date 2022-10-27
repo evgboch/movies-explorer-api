@@ -16,6 +16,7 @@ const resMessagesList = {
   conflict: 'Пользователь с указанной почтой уже существует',
   deletionSuccess: 'Фильм удалён',
   incorrectCredentials: 'Неправильные почта или пароль',
+  incorrectPath: 'Указанный путь не существует',
 };
 
 module.exports = {
