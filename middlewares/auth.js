@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const { JWT_SECRET_DEV } = require('../utils/serverConfigs');
 const UnauthorizedError = require('../errors/Unauthorized');
 
 function checkAuthorization(req, res, next) {
@@ -12,7 +13,7 @@ function checkAuthorization(req, res, next) {
   const token = authorization.replace('Bearer ', '');
   jwt.verify(
     token,
-    NODE_ENV === 'production' ? JWT_SECRET : 'top-secret',
+    NODE_ENV === 'production' ? JWT_SECRET : JWT_SECRET_DEV,
     (err, data) => {
       if (err) {
         next(new UnauthorizedError());
