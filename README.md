@@ -34,6 +34,8 @@
 
 ## Ссылка на репозиторий проекта
 
-`IP` 51.250.87.21
-`Домен` https://api.evg.nomoredomains.icu
-`Github` https://github.com/evgboch/movies-explorer-api
+```
+IP 51.250.87.21
+Домен https://api.evg.nomoredomains.icu
+Github https://github.com/evgboch/movies-explorer-api
+```
