@@ -57,7 +57,7 @@ function getUserInfo(req, res, next) {
       });
     })
     .catch((err) => {
-      if ((err.name === 'ValidationError') || (err.name === 'CastError')) {
+      if (err.name === 'CastError') {
         next(new BadRequestError());
       } else {
         next(err);

@@ -8,6 +8,7 @@ function checkAuthorization(req, res, next) {
 
   if (!authorization || !authorization.startsWith('Bearer ')) {
     next(new UnauthorizedError());
+    return;
   }
 
   const token = authorization.replace('Bearer ', '');
@@ -17,6 +18,7 @@ function checkAuthorization(req, res, next) {
     (err, data) => {
       if (err) {
         next(new UnauthorizedError());
+        return;
       }
       req.user = data;
       next();
