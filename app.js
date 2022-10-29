@@ -15,9 +15,9 @@ const { NODE_ENV, DB_URL, PORT = 3000 } = process.env;
 const app = express();
 
 app.use(helmet());
+app.use(requestLogger);
 app.use(rateLimiter);
 app.use(bodyParser.json());
-app.use(requestLogger);
 app.use(mainRouter);
 app.use(errorLogger);
 app.use(errors());
