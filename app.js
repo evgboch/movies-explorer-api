@@ -5,12 +5,12 @@ const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 const rateLimiter = require('./middlewares/rateLimiter');
-const { DB_URL } = require('./utils/serverConfigs');
+const { DB_URL_DEV } = require('./utils/serverConfigs');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const mainRouter = require('./routes/index');
 const catchErrors = require('./middlewares/errors');
 
-const { PORT = 3000 } = process.env;
+const { NODE_ENV, DB_URL, PORT = 3000 } = process.env;
 
 const app = express();
 
@@ -23,6 +23,6 @@ app.use(errorLogger);
 app.use(errors());
 app.use(catchErrors);
 
-mongoose.connect(DB_URL);
+mongoose.connect(NODE_ENV === 'production' ? DB_URL : DB_URL_DEV);
 
 app.listen(PORT);
