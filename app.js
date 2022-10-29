@@ -7,7 +7,7 @@ const { errors } = require('celebrate');
 const rateLimiter = require('./middlewares/rateLimiter');
 const { DB_URL_DEV } = require('./utils/serverConfigs');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const mainRouter = require('./routes/index');
+const mainRouter = require('./routes');
 const catchErrors = require('./middlewares/errors');
 
 const { NODE_ENV, DB_URL, PORT = 3000 } = process.env;
