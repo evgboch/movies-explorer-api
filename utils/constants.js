@@ -19,7 +19,20 @@ const resMessagesList = {
   incorrectPath: 'Указанный путь не существует',
 };
 
+const allowedCors = [
+  'https://praktikum.tk',
+  'http://praktikum.tk',
+  'http://localhost:3000',
+  'https://localhost:3000',
+  'https://evg.nomoredomains.icu',
+  'http://evg.nomoredomains.icu',
+];
+
+const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
+
 module.exports = {
   errorStatusesList,
   resMessagesList,
+  allowedCors,
+  DEFAULT_ALLOWED_METHODS,
 };
