@@ -24,6 +24,8 @@ const allowedCors = [
   'http://praktikum.tk',
   'http://localhost:3000',
   'https://localhost:3000',
+  'http://localhost:3001',
+  'https://localhost:3001',
   'https://evg.nomoredomains.icu',
   'http://evg.nomoredomains.icu',
 ];
