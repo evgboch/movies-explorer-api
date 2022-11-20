@@ -15,6 +15,7 @@ function createUser(req, res, next) {
       res.send({
         email: user.email,
         name: user.name,
+        _id: user._id,
       });
     })
     .catch((err) => {
@@ -54,6 +55,7 @@ function getUserInfo(req, res, next) {
       res.send({
         email: user.email,
         name: user.name,
+        _id: user._id,
       });
     })
     .catch((err) => {
